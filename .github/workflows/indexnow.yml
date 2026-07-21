@@ -1,0 +1,37 @@
+name: IndexNow 자동 핑
+
+# main 브랜치에 push 될 때마다(=콘텐츠 갱신될 때마다) 자동 실행.
+# GitHub Pages 배포가 끝나기까지 시간차가 있을 수 있어 60초 대기 후 전송.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}   # 수동으로도 "Run workflow" 버튼으로 즉시 실행 가능
+
+jobs:
+  ping-indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 배포 반영 대기
+        run: sleep 60
+
+      - name: sitemap.xml에서 URL 목록 추출 후 IndexNow 전송
+        run: |
+          SITEMAP_URL="https://healthkeeper2026-lab.github.io/healthfactcheck/sitemap.xml"
+          echo "sitemap 가져오는 중: $SITEMAP_URL"
+
+          URLS_JSON=$(curl -s "$SITEMAP_URL" \
+            | grep -oP '(?<=<loc>)[^<]+' \
+            | jq -R . | jq -s .)
+
+          echo "제출할 URL:"
+          echo "$URLS_JSON"
+
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{
+              \"host\": \"healthkeeper2026-lab.github.io\",
+              \"key\": \"220d3807ecda0a3f186c65bca4550e81\",
+              \"keyLocation\": \"https://healthkeeper2026-lab.github.io/healthfactcheck/220d3807ecda0a3f186c65bca4550e81.txt\",
+              \"urlList\": $URLS_JSON
+            }" \
+            -w "\nHTTP 응답 코드: %{http_code}\n"
