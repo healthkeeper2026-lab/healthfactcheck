@@ -1,0 +1,73 @@
+# 眞僞 (진위) · 건강, 진실과 거짓 사이
+
+> 건강 통념을 실제 발표된 독립 연구 근거로 진실·부분진실·거짓 3단계로 검증하는 아카이브. 각 판정마다 원문 출처와 핵심 수치, 연구의 한계를 함께 밝힙니다. 어떤 제품도 홍보하지 않습니다.
+
+## 검증 방법
+- 각 판정은 독립적으로 수행되어 발표된 연구 1편에 근거합니다.
+- 판정은 3단계: 진실(근거가 주장을 뒷받침) / 부분진실(조건부 성립) / 거짓(근거가 주장을 뒤집음).
+- 관찰연구의 인과 한계, 자가보고 편향, 실험실 조건 등 연구가 스스로 밝힌 한계를 함께 기록합니다.
+
+## 검증 목록 (9건)
+
+### 가열담배는 일반담배보다 발암물질 노출이 절반이다 ?
+- 판정: **부분진실**
+- 요약: 모사 흡연 조건에서 발암물질의 상대 발생량은 절반 이하로 줄었지만, 니코틴·글리세롤은 오히려 더 많았습니다.
+- 한 줄: 발암성은 줄지만, '덜 해롭다'가 '안전하다'는 아니다.
+- 출처: Lee T, Park J, Kim Y, Chen W-H, Kwon EE. Comparison of toxic pyrogenic compounds derived from conventional cigarettes and heated tobacco products. Journal of Hazardous Materials 493 (2025) 138357.
+- 링크: https://healthkeeper2026-lab.github.io/healthfactcheck/#study-01
+
+### 가열담배는 실내 공기 오염이 일반담배보다 훨씬 적다
+- 판정: **진실**
+- 요약: 밀폐 흡연 부스 측정에서 가열담배의 총 휘발성유기화합물은 일반담배보다 약 10배 낮았습니다. 다만 '무해'는 아닙니다.
+- 한 줄: 덜 오염시키는 것은 사실. 오염시키지 않는 것은 아니다.
+- 출처: Lee Y-S, Lim D-H, Maitlo HA, Kim K-H. The smoking of heat-not-burn (HNB) cigarette products and its effects on indoor air quality. Journal of Hazardous Materials 496 (2025) 138790.
+- 링크: https://healthkeeper2026-lab.github.io/healthfactcheck/#study-02
+
+### 전자담배로 바꾸면 심혈관 위험이 낮아진다 ?
+- 판정: **부분진실**
+- 요약: 흡연 지속보다는 낮지만, 금연에 비하면 오히려 높았습니다. '전환=안심'은 성립하지 않습니다.
+- 한 줄: 흡연은 이기고, 금연에는 진다.
+- 출처: Choi S, Lee K, Park SM. Combined Associations of Changes in Noncombustible Nicotine or Tobacco Product and Combustible Cigarette Use Habits With Subsequent Short-Term Cardiovascular Disease Risk Among South Korean Men. Circulation. 2021;144:1528–1538.
+- 링크: https://healthkeeper2026-lab.github.io/healthfactcheck/#study-03
+
+### 스텐트 시술 후 완전 전환이 이중사용보다 낫다
+- 판정: **진실**
+- 요약: 관상동맥중재술(PCI)을 받은 흡연자에서, 전자담배로 완전 전환한 사람이 일반+전자를 병행한 이중사용자보다 심장 사건이 적었습니다.
+- 한 줄: 반만 바꾸면 반만 얻는다 — 아니, 그보다 적게.
+- 출처: Kang D, Choi KH, Kim H, et al. Prognosis after switching to electronic cigarettes following percutaneous coronary intervention: a Korean nationwide study. European Heart Journal (2024) 00, 1–12.
+- 링크: https://healthkeeper2026-lab.github.io/healthfactcheck/#study-04
+
+### 전자담배는 금연으로 가는 좋은 '다리'가 된다
+- 판정: **거짓**
+- 요약: 만성 B형간염 환자에서 전자담배 전환자의 12%만 실제로 금연에 도달했습니다 — 지속흡연자(11%)와 사실상 차이가 없었습니다.
+- 한 줄: 다리라기엔, 건너간 사람이 너무 적었다.
+- 출처: Song BG, Lee M, Cho J, Gwak G-Y, Kang D, Sinn DH. E-cigarette switching, smoking cessation, and the risk of hepatocellular carcinoma in patients with chronic hepatitis B. Preventive Medicine 205 (2026) 108530.
+- 링크: https://healthkeeper2026-lab.github.io/healthfactcheck/#study-05
+
+### 전자담배로 바꾸면 디스크 위험이 줄어든다 ?
+- 판정: **부분진실**
+- 요약: 가열담배(HEC)로 바꾸면 위험이 줄었지만, 액상형(LEC)으로 바꾸면 지속흡연과 위험이 비슷했습니다. 종류가 결과를 갈랐습니다.
+- 한 줄: '전자담배'는 하나가 아니다. 바꾼 종류가 운명을 갈랐다.
+- 출처: Shin JW, Kwon J-W, Chun SY, et al. Electronic and Conventional Cigarette Use and Risk of Spinal Disc Disorders: A Nationwide Cohort Study. The Spine Journal (2025), in press. doi:10.1016/j.spinee.2025.10.022.
+- 링크: https://healthkeeper2026-lab.github.io/healthfactcheck/#study-06
+
+### 달리기는 무릎 연골을 갉아먹는다
+- 판정: **거짓**
+- 요약: 단기 추적 데이터에서 러너는 오히려 무릎 인공관절 치환술로 진행할 위험이 더 낮았고, 통증이나 영상 소견도 악화되지 않았습니다.
+- 한 줄: 무릎을 망치는 건 달리기가 아니라, 달리지 않는 습관일 수 있다.
+- 출처: Dhillon J, Kraeutler MJ, Belk JW, Scillia AJ, McCarty EC, Ansah-Twum JK, McCulloch PC. Effects of Running on the Development of Knee Osteoarthritis: An Updated Systematic Review at Short-Term Follow-up. Orthopaedic Journal of Sports Medicine. 2023. doi:10.1177/23259671231152900.
+- 링크: https://healthkeeper2026-lab.github.io/healthfactcheck/#study-07
+
+### 주말에 몰아 자면 부족한 잠이 만회된다 ?
+- 판정: **부분진실**
+- 요약: 자기보고 기반 연구는 몰아자기가 심장병 위험을 낮춘다고 했지만, 손목 기기로 실측한 연구는 그 효과를 찾지 못했습니다.
+- 한 줄: 몰아 자기의 효과는, 잰 방법에 따라 있다가도 사라진다.
+- 출처: Chaput J-P, Biswas RK, Ahmadi M, Cistulli PA, Rajaratnam SMW, Hamer M, Stamatakis E. Device-measured weekend catch-up sleep, mortality, and cardiovascular disease incidence in adults. Sleep. 2024;47(11):zsae135. 비교자료: Song Y, Liu Z, et al. Weekend compensatory sleep is associated with reduced risk of heart disease: a prospective UK Biobank-based cohort study. ESC Congress 2024 발표.
+- 링크: https://healthkeeper2026-lab.github.io/healthfactcheck/#study-08
+
+### 자기 전 술 한잔이 숙면을 돕는다
+- 판정: **부분진실**
+- 요약: 잠드는 속도는 빨라지지만, 적은 양으로도 REM 수면이 줄고 수면 구조가 흐트러집니다. '빨리 잠든다'와 '잘 잔다'는 다른 이야기입니다.
+- 한 줄: 더 빨리 잠들지만, 더 얕게 잔다.
+- 출처: Gardiner C, Weakley J, Burke LM, Roach GD, Sargent C, Maniar N, Huynh M, Miller DJ, Townshend A, Halson SL. The effect of alcohol on subsequent sleep in healthy adults: a systematic review and meta-analysis. Sleep Medicine Reviews. 2025;80:102030.
+- 링크: https://healthkeeper2026-lab.github.io/healthfactcheck/#study-09
