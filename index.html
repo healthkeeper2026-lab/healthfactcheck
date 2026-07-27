@@ -20,6 +20,13 @@
   --amber:#7d5b16;      /* 부분진실 - 대비 보정(기존 #b8862b는 대비 부족) */
   --smoke:#6b6355;      /* 보조 텍스트 - 대비 보정(기존 #8f887d는 대비 부족) */
   --line:rgba(20,17,15,.14);
+  /* 카테고리 색상 - 판정색(verdi/amber/ember)과 겹치지 않는 청록~장미 계열 */
+  --cat-resp:#2c6d6a;      --cat-resp-rgb:44,109,106;
+  --cat-cardio:#2c4a6d;    --cat-cardio-rgb:44,74,109;
+  --cat-hepatic:#332c6d;   --cat-hepatic-rgb:51,44,109;
+  --cat-msk:#572c6d;       --cat-msk-rgb:87,44,109;
+  --cat-sleep:#6d2c6d;     --cat-sleep-rgb:109,44,109;
+  --cat-nutrition:#6d2c47; --cat-nutrition-rgb:109,44,71;
   --serif:'Nanum Myeongjo',serif;
   --sans:'IBM Plex Sans KR',sans-serif;
   --mono:'IBM Plex Mono',monospace;
@@ -70,16 +77,33 @@ body::before{
   color:var(--ink-soft);text-align:right;line-height:1.6;
 }
 .mast-nav{
-  display:flex;flex-wrap:nowrap;overflow-x:auto;align-items:center;gap:22px;
-  padding:12px clamp(18px,5vw,64px);border-top:1px solid var(--line);
+  display:flex;flex-wrap:nowrap;overflow-x:auto;align-items:center;gap:8px;
+  padding:10px clamp(18px,5vw,64px);border-top:1px solid var(--line);
   font-family:var(--sans);font-weight:500;font-size:.86rem;color:var(--ink-soft);
   scrollbar-width:thin;
 }
 .mast-nav::-webkit-scrollbar{height:3px}
 .mast-nav::-webkit-scrollbar-thumb{background:var(--line)}
-.mast-nav a{color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:2px 0;border-bottom:2px solid transparent;transition:.2s}
-.mast-nav a:hover{color:var(--ember-text);border-color:var(--ember-text)}
-.mast-nav-strong{margin-left:2px;padding-left:22px!important;border-left:1px solid var(--line)}
+.mast-nav a{
+  --cat-a:44,109,106;
+  display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+  padding:7px 14px 7px 11px;border-radius:999px;
+  border:1px solid var(--line);background:var(--paper-2);
+  color:var(--ink-soft);text-decoration:none;font-weight:500;
+  transition:background .2s,border-color .2s,color .2s,transform .15s;
+}
+.mast-nav a .dot{width:7px;height:7px;border-radius:50%;background:rgb(var(--cat-a));flex:none}
+.mast-nav a:hover{
+  background:rgba(var(--cat-a),.14);border-color:rgba(var(--cat-a),.5);color:var(--ink);
+  transform:translateY(-1px);
+}
+.mast-nav a.active{background:rgb(var(--cat-a));border-color:rgb(var(--cat-a));color:var(--paper)}
+.mast-nav a.active .dot{background:var(--paper)}
+.mast-nav-strong{
+  margin-left:4px;border-color:var(--ink)!important;background:var(--ink)!important;color:var(--paper)!important;
+}
+.mast-nav-strong .dot{background:var(--ember-soft)!important}
+.mast-nav-strong:hover{background:var(--ink)!important;opacity:.85;transform:translateY(-1px)}
 .idx-soon{color:var(--smoke);display:inline-flex;align-items:center;gap:7px;cursor:default;white-space:nowrap}
 .idx-soon i{font-style:normal;font-family:var(--sans);font-weight:500;font-size:.72rem;border:1px solid var(--line);padding:2px 8px;border-radius:9px;letter-spacing:0;color:var(--smoke)}
 
@@ -120,12 +144,12 @@ body::before{
   position:relative;z-index:2;max-width:1240px;margin:0 auto;
   padding:clamp(40px,6vw,84px) clamp(18px,5vw,44px);
 }
-.chapter-head{margin-bottom:44px}
+.chapter-head{margin-bottom:44px;padding-left:20px;border-left:4px solid var(--cat, var(--ember));}
 .chapter-kicker{
   font-family:var(--sans);font-weight:600;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--ember-text);margin-bottom:12px;display:flex;gap:12px;align-items:center;
+  color:var(--cat, var(--ember-text));margin-bottom:12px;display:flex;gap:10px;align-items:center;
 }
-.chapter-kicker::before{content:"§";font-size:1.1rem;color:var(--smoke)}
+.chapter-kicker::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--cat, var(--ember))}
 .chapter-title{
   font-family:var(--serif);font-weight:800;font-size:clamp(1.8rem,3.6vw,2.7rem);
   line-height:1.1;
@@ -139,10 +163,11 @@ body::before{
 }
 .card{
   background:var(--paper);padding:30px 30px 34px;
-  cursor:pointer;position:relative;transition:background .35s, transform .35s;
+  cursor:pointer;position:relative;transition:background .35s, border-color .35s, transform .2s;
   display:flex;flex-direction:column;min-height:340px;
+  border-left:3px solid rgba(var(--cat-rgb,109,100,85),.32);
 }
-.card:hover{background:var(--paper-2)}
+.card:hover{background:var(--paper-2);border-left-color:var(--cat, var(--ember));transform:translateY(-1px)}
 .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:22px}
 .card-no{
   font-family:var(--sans);font-weight:600;font-size:.82rem;letter-spacing:.02em;color:var(--ink-soft);
@@ -166,7 +191,7 @@ body::before{
   padding:4px 10px;border-radius:2px;white-space:nowrap;
 }
 .tag-topic{background:var(--ink-soft);color:var(--paper)}
-.tag-domain{border:1px solid var(--ember-soft);color:var(--ember-text)}
+.tag-domain{border:1px solid rgba(var(--cat-rgb,224,160,138),.55);color:var(--cat, var(--ember-text))}
 .card-claim{
   font-family:var(--serif);font-weight:700;font-size:1.44rem;line-height:1.28;
   margin-bottom:14px;letter-spacing:-.01em;
@@ -179,7 +204,7 @@ body::before{
   font-family:var(--sans);font-weight:500;font-size:.8rem;letter-spacing:0;color:var(--smoke);
 }
 .card-open{color:var(--ink);display:inline-flex;align-items:center;gap:8px;transition:gap .25s,color .25s}
-.card:hover .card-open{gap:14px;color:var(--ember-text)}
+.card:hover .card-open{gap:14px;color:var(--cat, var(--ember-text))}
 
 /* ---------- 지식 코너 ---------- */
 .aside-grid{
@@ -233,7 +258,7 @@ body::before{
 .rb-verdict-badge::before{content:"";width:8px;height:8px;border-radius:50%}
 .rb-oneline{font-size:.98rem;color:var(--ink-soft);font-style:italic;font-family:var(--serif)}
 .rb-body h4{
-  font-family:var(--sans);font-weight:700;font-size:.84rem;letter-spacing:.03em;text-transform:uppercase;color:var(--ember-text);
+  font-family:var(--sans);font-weight:700;font-size:.84rem;letter-spacing:.03em;text-transform:uppercase;color:var(--cat, var(--ember-text));
   margin:38px 0 14px;display:flex;align-items:center;gap:12px;
 }
 .rb-body h4::after{content:"";flex:1;height:1px;background:var(--line)}
@@ -252,7 +277,7 @@ body::before{
 .rb-stat .l{font-family:var(--sans);font-weight:500;font-size:.78rem;letter-spacing:0;color:var(--smoke);margin-top:6px}
 .rb-callout{border-left:3px solid var(--ember);padding:6px 0 6px 20px;margin:24px 0;font-family:var(--serif);font-size:1.16rem;line-height:1.5;color:var(--ink)}
 .rb-source{margin-top:44px;padding:20px 22px;background:var(--paper-2);border:1px solid var(--line);font-family:var(--mono);font-size:.78rem;line-height:1.75;color:var(--ink-soft)}
-.rb-source .src-lab{font-family:var(--sans);font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ember-text);font-size:.74rem;margin-bottom:8px}
+.rb-source .src-lab{font-family:var(--sans);font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--cat, var(--ember-text));font-size:.74rem;margin-bottom:8px}
 .rb-caveat{margin-top:20px;font-size:.86rem;color:var(--smoke);font-style:italic}
 
 /* ---------- 방법론 스트립 ---------- */
@@ -262,7 +287,7 @@ body::before{
 }
 .method-inner{max-width:1240px;margin:0 auto}
 .method .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ember-soft);margin-bottom:20px}
-.method h2{font-family:var(--serif);font-weight:800;font-size:clamp(1.6rem,3.4vw,2.5rem);line-height:1.15;max-width:20ch;margin-bottom:34px}
+.method h2{font-family:var(--serif);font-weight:800;font-size:clamp(1.6rem,3.4vw,2.5rem);line-height:1.15;max-width:20ch;margin-bottom:34px;word-break:keep-all}
 .method-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(243,239,230,.16);border:1px solid rgba(243,239,230,.16)}
 .mg{background:var(--ink);padding:24px 22px}
 .mg .mi{font-family:var(--sans);font-weight:600;font-size:.78rem;color:var(--ember-soft);letter-spacing:.02em;margin-bottom:12px}
@@ -318,13 +343,13 @@ footer{
     </div>
   </div>
   <nav class="mast-nav">
-    <a href="#chapter-resp">호흡기</a>
-    <a href="#chapter-cardio">심혈관</a>
-    <a href="#chapter-hepatic">간·대사</a>
-    <a href="#chapter-msk">근골격계</a>
-    <a href="#chapter-sleep">정신·수면</a>
-    <a href="#chapter-nutrition">영양·체중</a>
-    <a href="#method" class="mast-nav-strong">검증 방법</a>
+    <a href="#chapter-resp" data-cat="resp" style="--cat-a:var(--cat-resp-rgb)"><i class="dot"></i>호흡기</a>
+    <a href="#chapter-cardio" data-cat="cardio" style="--cat-a:var(--cat-cardio-rgb)"><i class="dot"></i>심혈관</a>
+    <a href="#chapter-hepatic" data-cat="hepatic" style="--cat-a:var(--cat-hepatic-rgb)"><i class="dot"></i>간·대사</a>
+    <a href="#chapter-msk" data-cat="msk" style="--cat-a:var(--cat-msk-rgb)"><i class="dot"></i>근골격계</a>
+    <a href="#chapter-sleep" data-cat="sleep" style="--cat-a:var(--cat-sleep-rgb)"><i class="dot"></i>정신·수면</a>
+    <a href="#chapter-nutrition" data-cat="nutrition" style="--cat-a:var(--cat-nutrition-rgb)"><i class="dot"></i>영양·체중</a>
+    <a href="#method" class="mast-nav-strong"><i class="dot"></i>검증 방법</a>
   </nav>
 </header>
 
@@ -362,7 +387,7 @@ footer{
 
 <!-- 챕터 1: 호흡 & 발암 -->
 <section class="chapters" id="chapter-resp">
-  <div class="chapter-head">
+  <div class="chapter-head" style="--cat:var(--cat-resp)">
     <div class="chapter-kicker">RESP · 호흡기 건강</div>
     <h2 class="chapter-title">숨 쉬는 통로, 무엇이 오가는가</h2>
     <p class="chapter-desc">폐와 기도, 실내 공기에 영향을 준다고 알려진 습관·제품·환경 요인을 검증합니다. 현재는 담배·니코틴 제품 관련 연구 2건이 있습니다.</p>
@@ -372,7 +397,7 @@ footer{
 
 <!-- 챕터 2: 심혈관 -->
 <section class="chapters" id="chapter-cardio" style="padding-top:0">
-  <div class="chapter-head">
+  <div class="chapter-head" style="--cat:var(--cat-cardio)">
     <div class="chapter-kicker">CARDIO · 심혈관 건강</div>
     <h2 class="chapter-title">심장과 혈관을 둘러싼 선택들</h2>
     <p class="chapter-desc">생활 습관이나 제품 전환이 심혈관계 위험을 실제로 낮추는지 대규모 추적 연구로 검증합니다. 현재는 담배·니코틴 제품 관련 연구 2건이 있습니다.</p>
@@ -382,7 +407,7 @@ footer{
 
 <!-- 챕터 3: 간 & 대사 -->
 <section class="chapters" id="chapter-hepatic" style="padding-top:0">
-  <div class="chapter-head">
+  <div class="chapter-head" style="--cat:var(--cat-hepatic)">
     <div class="chapter-kicker">HEPA · META · 간·대사 건강</div>
     <h2 class="chapter-title">몸속 대사와 장기에 남는 흔적</h2>
     <p class="chapter-desc">간을 비롯한 대사 기관에 관한 주장을 장기 추적 연구로 검증합니다. 현재는 담배·니코틴 제품 관련 연구 1건이 있습니다.</p>
@@ -392,7 +417,7 @@ footer{
 
 <!-- 챕터 4: 뼈 & 척추 -->
 <section class="chapters" id="chapter-msk" style="padding-top:0">
-  <div class="chapter-head">
+  <div class="chapter-head" style="--cat:var(--cat-msk)">
     <div class="chapter-kicker">MSK · 근골격계 건강</div>
     <h2 class="chapter-title">뼈와 관절, 오래된 습관의 청구서</h2>
     <p class="chapter-desc">통증과 퇴행성 변화에 영향을 준다고 알려진 요인을 검증합니다. 현재는 담배·니코틴, 러닝·운동습관 관련 연구 2건이 있습니다.</p>
@@ -401,7 +426,7 @@ footer{
 </section>
 
 <section class="chapters" id="chapter-sleep" style="padding-top:0">
-  <div class="chapter-head">
+  <div class="chapter-head" style="--cat:var(--cat-sleep)">
     <div class="chapter-kicker">PSY · SLEEP · 정신·수면 건강</div>
     <h2 class="chapter-title">잠에 관한 조언은 대부분 절반만 맞다</h2>
     <p class="chapter-desc">수면의 양과 질, 회복에 관한 통념을 검증합니다. 이 아카이브의 두 번째 주제로, 수면 습관 관련 연구 2건으로 시작합니다.</p>
@@ -410,7 +435,7 @@ footer{
 </section>
 
 <section class="chapters" id="chapter-nutrition" style="padding-top:0">
-  <div class="chapter-head">
+  <div class="chapter-head" style="--cat:var(--cat-nutrition)">
     <div class="chapter-kicker">NUTRI · 영양·체중 건강</div>
     <h2 class="chapter-title">식사법에 관한 조언은 유행을 탄다</h2>
     <p class="chapter-desc">체중 감량과 식습관을 둘러싼 통념을 무작위 대조시험(RCT) 근거로 검증합니다. 이 아카이브의 세 번째 주제로, 식사·다이어트 관련 연구 2건으로 시작합니다.</p>
@@ -710,7 +735,7 @@ const vClass={true:"v-true",part:"v-part",false:"v-false"};
 const vClassBadge={true:"v-true",part:"v-part",false:"v-false"};
 
 function cardHTML(d,i){
-  return `<div class="card" data-i="${i}">
+  return `<div class="card" data-i="${i}" style="--cat:var(--cat-${d.ch});--cat-rgb:var(--cat-${d.ch}-rgb)">
     <div class="card-top">
       <span class="card-no">${d.no}</span>
       <span class="verdict ${vClass[d.verdict]}">${d.vtext}</span>
@@ -759,12 +784,12 @@ function openReader(i){
       <span class="rb-no">${d.no} · 眞僞 검증</span>
       <button class="close-btn" id="closeBtn">닫기 ✕</button>
     </div>
-    <div class="reader-body">
+    <div class="reader-body" style="--cat:var(--cat-${d.ch});--cat-rgb:var(--cat-${d.ch}-rgb)">
       <div class="rb-tags">
         <span class="tag-topic">${d.topic}</span>
         <span class="tag-domain">${d.domain}</span>
       </div>
-      <h1 class="rb-claim">${d.claim[0]}<em style="font-style:normal;color:var(--ember)">${d.claim[1]}</em>${d.qmark?` ${d.qmark}`:""}</h1>
+      <h1 class="rb-claim">${d.claim[0]}<em style="font-style:normal;color:var(--cat, var(--ember))">${d.claim[1]}</em>${d.qmark?` ${d.qmark}`:""}</h1>
       <div class="rb-verdict-line">
         <span class="rb-verdict-badge ${vClassBadge[d.verdict]}">판정 · ${d.vtext}</span>
         <span class="rb-oneline">"${d.oneline}"</span>
@@ -788,6 +813,23 @@ document.addEventListener("click",e=>{
   if(e.target===overlay) closeReader();
 });
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeReader();});
+
+/* 스크롤 스파이: 현재 보고 있는 섹션의 내비게이션 버튼을 활성화 */
+const navLinks=[...document.querySelectorAll(".mast-nav a[data-cat]")];
+const navMap={};
+navLinks.forEach(a=>{ navMap[a.getAttribute("href").slice(1)] = a; });
+const spySections=[...document.querySelectorAll('section.chapters[id^="chapter-"]')];
+if("IntersectionObserver" in window && spySections.length){
+  const spy=new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      const link=navMap[en.target.id];
+      if(!link) return;
+      if(en.isIntersecting) link.classList.add("active");
+      else link.classList.remove("active");
+    });
+  },{rootMargin:"-45% 0px -50% 0px",threshold:0});
+  spySections.forEach(s=>spy.observe(s));
+}
 </script>
 </body>
 </html>
