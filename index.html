@@ -132,12 +132,9 @@ body::before{
 .hero-lead{
   margin-top:32px;max-width:52ch;
   font-size:clamp(1rem,1.7vw,1.22rem);font-weight:400;color:var(--ink-soft);
+  word-break:keep-all;
 }
 .hero-lead b{font-weight:600;color:var(--ink);border-bottom:2px solid var(--ember-soft)}
-.smoke-mark{
-  position:absolute;right:-6%;top:-10%;width:min(46vw,560px);height:120%;
-  pointer-events:none;opacity:.5;z-index:-1;
-}
 
 /* ---------- 섹션 내비 ---------- */
 .chapters{
@@ -355,19 +352,6 @@ footer{
 
 <!-- 히어로 -->
 <section class="hero">
-  <svg class="smoke-mark" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <linearGradient id="sm" x1="0" y1="1" x2="0" y2="0">
-        <stop offset="0" stop-color="#c1462d" stop-opacity="0.5"/>
-        <stop offset="1" stop-color="#c1462d" stop-opacity="0"/>
-      </linearGradient>
-    </defs>
-    <path d="M200 500 C 200 430 160 400 175 350 C 190 300 250 290 230 240 C 210 190 150 200 170 150 C 185 110 240 110 225 70 C 215 40 180 40 195 10"
-      fill="none" stroke="url(#sm)" stroke-width="2.5"/>
-    <path d="M215 500 C 215 440 250 410 235 360 C 220 310 165 305 185 255 C 205 205 260 210 245 160"
-      fill="none" stroke="url(#sm)" stroke-width="1.6"/>
-  </svg>
-
   <div class="hero-eyebrow">건강 주장 검증 아카이브</div>
   <h1><span class="t">진실</span><span class="slash">과</span><span class="f">거짓</span> 사이,<br>믿음은 증거가<br>아니다</h1>
   <p class="hero-lead">
