@@ -4,9 +4,332 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>眞僞 · 건강, 진실과 거짓 사이</title>
+<meta name="description" content="건강을 둘러싼 통념과 주장을 독립적으로 수행된 연구 결과와 대조해 진실·부분진실·거짓으로 판정하는 검증 아카이브. 담배·니코틴, 운동, 수면, 영양 등 건강 전반을 다룹니다.">
+<!-- TODO: 실제 배포 도메인이 정해지면 아래 og:url과 JSON-LD의 https://example.com/ 을 실제 URL로 교체하세요 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="眞僞 — 건강, 진실과 거짓 사이">
+<meta property="og:title" content="眞僞 · 건강, 진실과 거짓 사이">
+<meta property="og:description" content="건강을 둘러싼 통념과 주장을 독립적으로 수행된 연구 결과와 대조해 진실·부분진실·거짓으로 판정하는 검증 아카이브입니다.">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="眞僞 · 건강, 진실과 거짓 사이">
+<meta name="twitter:description" content="건강을 둘러싼 통념과 주장을 독립적으로 수행된 연구 결과와 대조해 진실·부분진실·거짓으로 판정합니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "眞僞 — 건강, 진실과 거짓 사이",
+      "alternateName": "Truth & Falsehood in Health",
+      "url": "https://example.com/",
+      "description": "건강을 둘러싼 통념과 주장을 독립적으로 수행된 연구 결과와 대조해 진실·부분진실·거짓으로 판정하는 검증 아카이브입니다.",
+      "inLanguage": "ko"
+    },
+    {
+      "@type": "ClaimReview",
+      "url": "#chapter-resp",
+      "claimReviewed": "가열담배는 일반담배보다 발암물질 노출이 절반이다 ?",
+      "itemReviewed": {
+        "@type": "Claim",
+        "appearance": [
+          {
+            "@type": "CreativeWork",
+            "name": "열분해 실험"
+          }
+        ],
+        "name": "가열담배는 일반담배보다 발암물질 노출이 절반이다 ?"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "眞僞",
+        "url": "https://example.com/"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 2,
+        "bestRating": 3,
+        "worstRating": 1,
+        "alternateName": "부분진실"
+      }
+    },
+    {
+      "@type": "ClaimReview",
+      "url": "#chapter-resp",
+      "claimReviewed": "가열담배는 실내 공기 오염이 일반담배보다 훨씬 적다",
+      "itemReviewed": {
+        "@type": "Claim",
+        "appearance": [
+          {
+            "@type": "CreativeWork",
+            "name": "실내 공기질 측정"
+          }
+        ],
+        "name": "가열담배는 실내 공기 오염이 일반담배보다 훨씬 적다"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "眞僞",
+        "url": "https://example.com/"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 3,
+        "bestRating": 3,
+        "worstRating": 1,
+        "alternateName": "진실"
+      }
+    },
+    {
+      "@type": "ClaimReview",
+      "url": "#chapter-cardio",
+      "claimReviewed": "전자담배로 바꾸면 심혈관 위험이 낮아진다 ?",
+      "itemReviewed": {
+        "@type": "Claim",
+        "appearance": [
+          {
+            "@type": "CreativeWork",
+            "name": "전국 코호트 · 515만 명"
+          }
+        ],
+        "name": "전자담배로 바꾸면 심혈관 위험이 낮아진다 ?"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "眞僞",
+        "url": "https://example.com/"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 2,
+        "bestRating": 3,
+        "worstRating": 1,
+        "alternateName": "부분진실"
+      }
+    },
+    {
+      "@type": "ClaimReview",
+      "url": "#chapter-cardio",
+      "claimReviewed": "스텐트 시술 후 완전 전환이 이중사용보다 낫다",
+      "itemReviewed": {
+        "@type": "Claim",
+        "appearance": [
+          {
+            "@type": "CreativeWork",
+            "name": "관상동맥중재술 후 코호트"
+          }
+        ],
+        "name": "스텐트 시술 후 완전 전환이 이중사용보다 낫다"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "眞僞",
+        "url": "https://example.com/"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 3,
+        "bestRating": 3,
+        "worstRating": 1,
+        "alternateName": "진실"
+      }
+    },
+    {
+      "@type": "ClaimReview",
+      "url": "#chapter-hepatic",
+      "claimReviewed": "전자담배는 금연으로 가는 좋은 '다리'가 된다",
+      "itemReviewed": {
+        "@type": "Claim",
+        "appearance": [
+          {
+            "@type": "CreativeWork",
+            "name": "만성 B형간염 코호트"
+          }
+        ],
+        "name": "전자담배는 금연으로 가는 좋은 '다리'가 된다"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "眞僞",
+        "url": "https://example.com/"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 1,
+        "bestRating": 3,
+        "worstRating": 1,
+        "alternateName": "거짓"
+      }
+    },
+    {
+      "@type": "ClaimReview",
+      "url": "#chapter-msk",
+      "claimReviewed": "전자담배로 바꾸면 디스크 위험이 줄어든다 ?",
+      "itemReviewed": {
+        "@type": "Claim",
+        "appearance": [
+          {
+            "@type": "CreativeWork",
+            "name": "전국 코호트 · 326만 명"
+          }
+        ],
+        "name": "전자담배로 바꾸면 디스크 위험이 줄어든다 ?"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "眞僞",
+        "url": "https://example.com/"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 2,
+        "bestRating": 3,
+        "worstRating": 1,
+        "alternateName": "부분진실"
+      }
+    },
+    {
+      "@type": "ClaimReview",
+      "url": "#chapter-msk",
+      "claimReviewed": "달리기는 무릎 연골을 갉아먹는다",
+      "itemReviewed": {
+        "@type": "Claim",
+        "appearance": [
+          {
+            "@type": "CreativeWork",
+            "name": "체계적 문헌고찰·메타분석"
+          }
+        ],
+        "name": "달리기는 무릎 연골을 갉아먹는다"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "眞僞",
+        "url": "https://example.com/"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 1,
+        "bestRating": 3,
+        "worstRating": 1,
+        "alternateName": "거짓"
+      }
+    },
+    {
+      "@type": "ClaimReview",
+      "url": "#chapter-sleep",
+      "claimReviewed": "주말에 몰아 자면 부족한 잠이 만회된다 ?",
+      "itemReviewed": {
+        "@type": "Claim",
+        "appearance": [
+          {
+            "@type": "CreativeWork",
+            "name": "UK 바이오뱅크 코호트 비교"
+          }
+        ],
+        "name": "주말에 몰아 자면 부족한 잠이 만회된다 ?"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "眞僞",
+        "url": "https://example.com/"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 2,
+        "bestRating": 3,
+        "worstRating": 1,
+        "alternateName": "부분진실"
+      }
+    },
+    {
+      "@type": "ClaimReview",
+      "url": "#chapter-sleep",
+      "claimReviewed": "자기 전 술 한잔이 숙면을 돕는다",
+      "itemReviewed": {
+        "@type": "Claim",
+        "appearance": [
+          {
+            "@type": "CreativeWork",
+            "name": "메타분석 · 27개 연구"
+          }
+        ],
+        "name": "자기 전 술 한잔이 숙면을 돕는다"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "眞僞",
+        "url": "https://example.com/"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 2,
+        "bestRating": 3,
+        "worstRating": 1,
+        "alternateName": "부분진실"
+      }
+    },
+    {
+      "@type": "ClaimReview",
+      "url": "#chapter-nutrition",
+      "claimReviewed": "아침을 거르면 살이 찐다",
+      "itemReviewed": {
+        "@type": "Claim",
+        "appearance": [
+          {
+            "@type": "CreativeWork",
+            "name": "메타분석 · RCT 7건"
+          }
+        ],
+        "name": "아침을 거르면 살이 찐다"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "眞僞",
+        "url": "https://example.com/"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 1,
+        "bestRating": 3,
+        "worstRating": 1,
+        "alternateName": "거짓"
+      }
+    },
+    {
+      "@type": "ClaimReview",
+      "url": "#chapter-nutrition",
+      "claimReviewed": "탄수화물을 끊어야 살이 잘 빠진다",
+      "itemReviewed": {
+        "@type": "Claim",
+        "appearance": [
+          {
+            "@type": "CreativeWork",
+            "name": "무작위 대조시험 · 609명·12개월"
+          }
+        ],
+        "name": "탄수화물을 끊어야 살이 잘 빠진다"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "眞僞",
+        "url": "https://example.com/"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 1,
+        "bestRating": 3,
+        "worstRating": 1,
+        "alternateName": "거짓"
+      }
+    }
+  ]
+}
+</script>
 <style>
 :root{
   --ink:#14110f;
