@@ -34,9 +34,18 @@
 ## 기술 스택
 
 - **빌드 도구 없는 단일 HTML 파일** — `index.html` 하나로 완결. 별도 프레임워크·번들러 없이 정적 파일로 어디든 배포 가능(GitHub Pages, Netlify, Vercel, S3 등)
-- 순수 **Vanilla JS**로 카드 렌더링, 상세 리더(모달), 스크롤 스파이 내비게이션 구현
+- **완전 정적 렌더링(SSR-like)** — 카드 11개의 전체 내용(요약뿐 아니라 상세 분석·수치·한계·출처까지)이 자바스크립트 없이도 raw HTML에 그대로 존재합니다. 자바스크립트는 그 위에 "더 읽기 좋은 모달"을 얹는 향상 레이어일 뿐입니다. `<details>` 요소로 점진적 공개(progressive disclosure)를 구현해 JS 유무와 관계없이 동일한 내용을 볼 수 있습니다
+- 순수 **Vanilla JS**로 모달 리더, 스크롤 스파이 내비게이션 구현(카드 자체는 더 이상 JS로 주입하지 않음)
 - 폰트: `Nanum Myeongjo`(제목) · `IBM Plex Sans KR`(본문/한글 UI) · `IBM Plex Mono`(영문 라벨)
-- **SEO/GEO 대응**: `meta description`, Open Graph, Twitter Card, 그리고 [schema.org `ClaimReview`](https://schema.org/ClaimReview) 기반 JSON-LD 구조화 데이터를 정적으로 포함 — 자바스크립트를 실행하지 않는 크롤러·AI 요약 엔진도 각 카드의 주장·판정을 인식할 수 있습니다
+
+### SEO/GEO(생성형 검색엔진 최적화) 대응
+
+- `meta description`, Open Graph, Twitter Card
+- [schema.org `ClaimReview`](https://schema.org/ClaimReview) — 판정 카드 11건, `Organization`을 `@id`로 한 번만 정의하고 참조하는 구조
+- [schema.org `FAQPage`](https://schema.org/FAQPage) — 실제 사용자가 검색·질문할 법한 자연어 질문 **44개**를 화면에 보이는 아코디언(`<details>`)과 JSON-LD 양쪽에 동일한 텍스트로 제공(구글 FAQ 리치결과 요건 충족)
+- `llms.txt` — AI 크롤러가 사이트 구조·핵심 콘텐츠를 빠르게 파악하도록 요약 제공
+- `robots.txt` — GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot 등 주요 AI 크롤러를 명시적으로 허용
+- `sitemap.xml`
 - 카테고리마다 고유 색상(WCAG AA 대비 통과)을 부여해 내비게이션·카드·상세보기에서 일관되게 사용
 
 ## 로컬에서 보기
@@ -58,7 +67,23 @@ open index.html   # 또는 브라우저로 파일을 직접 드래그
 # 저장소 Settings → Pages → Branch: main / (root) 선택 후 저장
 ```
 
-배포 후에는 `index.html` `<head>`의 `og:url`과 JSON-LD `WebSite`/`author`의 `url` 값(현재 `https://example.com/` 플레이스홀더)을 실제 도메인으로 교체해주세요.
+배포 후에는 `https://example.com/`을 실제 도메인으로 교체해주세요. **3개 파일에 걸쳐 총 5곳**입니다.
+
+| 파일 | 위치 | 개수 |
+|---|---|---|
+| `index.html` | `<head>`의 `og:url` | 1 |
+| `index.html` | JSON-LD `Organization.url` / `WebSite.url` | 2 |
+| `robots.txt` | 맨 아래 `Sitemap:` 줄 | 1 |
+| `sitemap.xml` | `<loc>` | 1 |
+
+(각 판정 카드는 `Organization`을 `@id`로 참조하는 구조라 11번 반복해서 바꿀 필요는 없습니다.) 한 번에 바꾸려면:
+
+```bash
+sed -i '' 's#https://example.com/#https://실제도메인.com/#g' index.html robots.txt sitemap.xml   # macOS
+sed -i 's#https://example.com/#https://실제도메인.com/#g' index.html robots.txt sitemap.xml       # Linux
+```
+
+`robots.txt`, `sitemap.xml`, `llms.txt`는 `index.html`과 같은 위치(도메인 루트)에 함께 올려야 크롤러가 표준 경로(`/robots.txt`, `/sitemap.xml`, `/llms.txt`)로 찾을 수 있습니다.
 
 ## 콘텐츠 추가하기
 
