@@ -1,0 +1,25 @@
+name: Submit to IndexNow
+
+# 수동 실행만 지원합니다(workflow_dispatch). push 트리거를 쓰지 않는 이유:
+# 매 커밋마다 자동 실행되면 사소한 문서 수정에도 워크플로가 돌고,
+# 실패 시 원치 않는 이메일 알림이 반복해서 옵니다.
+# 콘텐츠를 실제로 갱신했을 때만 Actions 탭에서 수동으로 "Run workflow"를 눌러 실행하세요.
+on:
+  workflow_dispatch:
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit URL to IndexNow (Bing, Yandex 등)
+        run: |
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d '{
+              "host": "healthkeeper2026-lab.github.io",
+              "key": "c0c807c704954ca9b11a7856d2b1623a",
+              "keyLocation": "https://healthkeeper2026-lab.github.io/healthfactcheck/c0c807c704954ca9b11a7856d2b1623a.txt",
+              "urlList": [
+                "https://healthkeeper2026-lab.github.io/healthfactcheck/"
+              ]
+            }'

@@ -70,4 +70,4 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://healthkeeper2026-lab.github.io/healthfactcheck/sitemap.xml

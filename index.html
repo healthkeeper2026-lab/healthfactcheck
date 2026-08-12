@@ -5,16 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>眞僞 · 건강, 진실과 거짓 사이</title>
 <meta name="description" content="건강을 둘러싼 통념과 주장을 독립적으로 수행된 연구 결과와 대조해 진실·부분진실·거짓으로 판정하는 검증 아카이브. 담배·니코틴, 운동, 수면, 영양 등 건강 전반을 다룹니다.">
-<!-- TODO: 실제 배포 도메인이 정해지면 og:url(아래)과 JSON-LD의 Organization.url / WebSite.url(총 3곳)을 실제 URL로 교체하세요 -->
+<link rel="canonical" href="https://healthkeeper2026-lab.github.io/healthfactcheck/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="眞僞 — 건강, 진실과 거짓 사이">
 <meta property="og:title" content="眞僞 · 건강, 진실과 거짓 사이">
 <meta property="og:description" content="건강을 둘러싼 통념과 주장을 독립적으로 수행된 연구 결과와 대조해 진실·부분진실·거짓으로 판정하는 검증 아카이브입니다.">
-<meta property="og:url" content="https://example.com/">
+<meta property="og:url" content="https://healthkeeper2026-lab.github.io/healthfactcheck/">
+<meta property="og:image" content="https://healthkeeper2026-lab.github.io/healthfactcheck/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="眞僞 — 건강, 진실과 거짓 사이. 진실·부분진실·거짓 판정, 11건 검증·6개 카테고리">
 <meta property="og:locale" content="ko_KR">
-<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f3efe6'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia,serif' font-weight='700' text-anchor='middle' fill='%23c1462d'%3E%E5%83%9E%3C/text%3E%3C/svg%3E">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="眞僞 · 건강, 진실과 거짓 사이">
 <meta name="twitter:description" content="건강을 둘러싼 통념과 주장을 독립적으로 수행된 연구 결과와 대조해 진실·부분진실·거짓으로 판정합니다.">
+<meta name="twitter:image" content="https://healthkeeper2026-lab.github.io/healthfactcheck/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -24,25 +30,25 @@
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "#org",
+      "@id": "https://healthkeeper2026-lab.github.io/healthfactcheck/#org",
       "name": "眞僞",
-      "url": "https://example.com/"
+      "url": "https://healthkeeper2026-lab.github.io/healthfactcheck/"
     },
     {
       "@type": "WebSite",
       "name": "眞僞 — 건강, 진실과 거짓 사이",
       "alternateName": "Truth & Falsehood in Health",
-      "url": "https://example.com/",
+      "url": "https://healthkeeper2026-lab.github.io/healthfactcheck/",
       "description": "건강을 둘러싼 통념과 주장을 독립적으로 수행된 연구 결과와 대조해 진실·부분진실·거짓으로 판정하는 검증 아카이브입니다.",
       "inLanguage": "ko",
-      "@id": "#website",
+      "@id": "https://healthkeeper2026-lab.github.io/healthfactcheck/#website",
       "publisher": {
-        "@id": "#org"
+        "@id": "https://healthkeeper2026-lab.github.io/healthfactcheck/#org"
       }
     },
     {
       "@type": "ClaimReview",
-      "url": "#chapter-resp",
+      "url": "https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-resp",
       "claimReviewed": "가열담배는 일반담배보다 발암물질 노출이 절반이다 ?",
       "itemReviewed": {
         "@type": "Claim",
@@ -55,7 +61,7 @@
         "name": "가열담배는 일반담배보다 발암물질 노출이 절반이다 ?"
       },
       "author": {
-        "@id": "#org"
+        "@id": "https://healthkeeper2026-lab.github.io/healthfactcheck/#org"
       },
       "reviewRating": {
         "@type": "Rating",
@@ -67,7 +73,7 @@
     },
     {
       "@type": "ClaimReview",
-      "url": "#chapter-resp",
+      "url": "https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-resp",
       "claimReviewed": "가열담배는 실내 공기 오염이 일반담배보다 훨씬 적다",
       "itemReviewed": {
         "@type": "Claim",
@@ -80,7 +86,7 @@
         "name": "가열담배는 실내 공기 오염이 일반담배보다 훨씬 적다"
       },
       "author": {
-        "@id": "#org"
+        "@id": "https://healthkeeper2026-lab.github.io/healthfactcheck/#org"
       },
       "reviewRating": {
         "@type": "Rating",
@@ -92,7 +98,7 @@
     },
     {
       "@type": "ClaimReview",
-      "url": "#chapter-cardio",
+      "url": "https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-cardio",
       "claimReviewed": "전자담배로 바꾸면 심혈관 위험이 낮아진다 ?",
       "itemReviewed": {
         "@type": "Claim",
@@ -105,7 +111,7 @@
         "name": "전자담배로 바꾸면 심혈관 위험이 낮아진다 ?"
       },
       "author": {
-        "@id": "#org"
+        "@id": "https://healthkeeper2026-lab.github.io/healthfactcheck/#org"
       },
       "reviewRating": {
         "@type": "Rating",
@@ -117,7 +123,7 @@
     },
     {
       "@type": "ClaimReview",
-      "url": "#chapter-cardio",
+      "url": "https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-cardio",
       "claimReviewed": "스텐트 시술 후 완전 전환이 이중사용보다 낫다",
       "itemReviewed": {
         "@type": "Claim",
@@ -130,7 +136,7 @@
         "name": "스텐트 시술 후 완전 전환이 이중사용보다 낫다"
       },
       "author": {
-        "@id": "#org"
+        "@id": "https://healthkeeper2026-lab.github.io/healthfactcheck/#org"
       },
       "reviewRating": {
         "@type": "Rating",
@@ -142,7 +148,7 @@
     },
     {
       "@type": "ClaimReview",
-      "url": "#chapter-hepatic",
+      "url": "https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-hepatic",
       "claimReviewed": "전자담배는 금연으로 가는 좋은 '다리'가 된다",
       "itemReviewed": {
         "@type": "Claim",
@@ -155,7 +161,7 @@
         "name": "전자담배는 금연으로 가는 좋은 '다리'가 된다"
       },
       "author": {
-        "@id": "#org"
+        "@id": "https://healthkeeper2026-lab.github.io/healthfactcheck/#org"
       },
       "reviewRating": {
         "@type": "Rating",
@@ -167,7 +173,7 @@
     },
     {
       "@type": "ClaimReview",
-      "url": "#chapter-msk",
+      "url": "https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-msk",
       "claimReviewed": "전자담배로 바꾸면 디스크 위험이 줄어든다 ?",
       "itemReviewed": {
         "@type": "Claim",
@@ -180,7 +186,7 @@
         "name": "전자담배로 바꾸면 디스크 위험이 줄어든다 ?"
       },
       "author": {
-        "@id": "#org"
+        "@id": "https://healthkeeper2026-lab.github.io/healthfactcheck/#org"
       },
       "reviewRating": {
         "@type": "Rating",
@@ -192,7 +198,7 @@
     },
     {
       "@type": "ClaimReview",
-      "url": "#chapter-msk",
+      "url": "https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-msk",
       "claimReviewed": "달리기는 무릎 연골을 갉아먹는다",
       "itemReviewed": {
         "@type": "Claim",
@@ -205,7 +211,7 @@
         "name": "달리기는 무릎 연골을 갉아먹는다"
       },
       "author": {
-        "@id": "#org"
+        "@id": "https://healthkeeper2026-lab.github.io/healthfactcheck/#org"
       },
       "reviewRating": {
         "@type": "Rating",
@@ -217,7 +223,7 @@
     },
     {
       "@type": "ClaimReview",
-      "url": "#chapter-sleep",
+      "url": "https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-sleep",
       "claimReviewed": "주말에 몰아 자면 부족한 잠이 만회된다 ?",
       "itemReviewed": {
         "@type": "Claim",
@@ -230,7 +236,7 @@
         "name": "주말에 몰아 자면 부족한 잠이 만회된다 ?"
       },
       "author": {
-        "@id": "#org"
+        "@id": "https://healthkeeper2026-lab.github.io/healthfactcheck/#org"
       },
       "reviewRating": {
         "@type": "Rating",
@@ -242,7 +248,7 @@
     },
     {
       "@type": "ClaimReview",
-      "url": "#chapter-sleep",
+      "url": "https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-sleep",
       "claimReviewed": "자기 전 술 한잔이 숙면을 돕는다",
       "itemReviewed": {
         "@type": "Claim",
@@ -255,7 +261,7 @@
         "name": "자기 전 술 한잔이 숙면을 돕는다"
       },
       "author": {
-        "@id": "#org"
+        "@id": "https://healthkeeper2026-lab.github.io/healthfactcheck/#org"
       },
       "reviewRating": {
         "@type": "Rating",
@@ -267,7 +273,7 @@
     },
     {
       "@type": "ClaimReview",
-      "url": "#chapter-nutrition",
+      "url": "https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-nutrition",
       "claimReviewed": "아침을 거르면 살이 찐다",
       "itemReviewed": {
         "@type": "Claim",
@@ -280,7 +286,7 @@
         "name": "아침을 거르면 살이 찐다"
       },
       "author": {
-        "@id": "#org"
+        "@id": "https://healthkeeper2026-lab.github.io/healthfactcheck/#org"
       },
       "reviewRating": {
         "@type": "Rating",
@@ -292,7 +298,7 @@
     },
     {
       "@type": "ClaimReview",
-      "url": "#chapter-nutrition",
+      "url": "https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-nutrition",
       "claimReviewed": "탄수화물을 끊어야 살이 잘 빠진다",
       "itemReviewed": {
         "@type": "Claim",
@@ -305,7 +311,7 @@
         "name": "탄수화물을 끊어야 살이 잘 빠진다"
       },
       "author": {
-        "@id": "#org"
+        "@id": "https://healthkeeper2026-lab.github.io/healthfactcheck/#org"
       },
       "reviewRating": {
         "@type": "Rating",
@@ -317,7 +323,7 @@
     },
     {
       "@type": "FAQPage",
-      "@id": "#faq",
+      "@id": "https://healthkeeper2026-lab.github.io/healthfactcheck/#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -1664,7 +1670,7 @@ footer{
 
 <!-- 모달 리더 -->
 <div class="overlay" id="overlay">
-  <article class="reader" id="reader"></article>
+  <article class="reader" id="reader" role="dialog" aria-modal="true" aria-label="연구 상세 분석" tabindex="-1"></article>
 </div>
 
 <script>
@@ -1889,8 +1895,22 @@ function bodyHTML(b){
   }).join("");
 }
 
+let lastFocused=null;
+function getFocusable(container){
+  return [...container.querySelectorAll('a[href], button, [tabindex]:not([tabindex="-1"])')]
+    .filter(el=>el.offsetParent!==null);
+}
+function trapFocus(e){
+  if(e.key!=="Tab") return;
+  const focusables=getFocusable(reader);
+  if(!focusables.length) return;
+  const first=focusables[0], last=focusables[focusables.length-1];
+  if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+  else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+}
 function openReader(i){
   const d=DATA[i];
+  lastFocused=document.activeElement;
   reader.innerHTML=`
     <div class="reader-bar">
       <span class="rb-no">${d.no} · 眞僞 검증</span>
@@ -1914,10 +1934,15 @@ function openReader(i){
   document.body.style.overflow="hidden";
   document.getElementById("closeBtn").onclick=closeReader;
   reader.scrollTop=0;
+  reader.setAttribute("aria-label", d.claim[0]+d.claim[1]);
+  reader.focus();
+  document.addEventListener("keydown",trapFocus);
 }
 function closeReader(){
   overlay.classList.remove("on");
   document.body.style.overflow="";
+  document.removeEventListener("keydown",trapFocus);
+  if(lastFocused && typeof lastFocused.focus==="function") lastFocused.focus();
 }
 document.addEventListener("click",e=>{
   const c=e.target.closest(".card");

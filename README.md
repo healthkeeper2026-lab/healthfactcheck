@@ -67,23 +67,23 @@ open index.html   # 또는 브라우저로 파일을 직접 드래그
 # 저장소 Settings → Pages → Branch: main / (root) 선택 후 저장
 ```
 
-배포 후에는 `https://example.com/`을 실제 도메인으로 교체해주세요. **3개 파일에 걸쳐 총 5곳**입니다.
+**현재 라이브 URL**: https://healthkeeper2026-lab.github.io/healthfactcheck/
 
-| 파일 | 위치 | 개수 |
-|---|---|---|
-| `index.html` | `<head>`의 `og:url` | 1 |
-| `index.html` | JSON-LD `Organization.url` / `WebSite.url` | 2 |
-| `robots.txt` | 맨 아래 `Sitemap:` 줄 | 1 |
-| `sitemap.xml` | `<loc>` | 1 |
+`og-image.png`(소셜 공유 미리보기, 1200×630)는 `og-image-source.html`을 헤드리스 브라우저로 캡처해 만들었습니다. 연구 건수·카테고리가 늘어나 이미지 내용을 갱신하고 싶다면 `og-image-source.html`의 텍스트만 고친 뒤 같은 방식(1200×630, 2x 스케일 캡처 후 리사이즈)으로 재생성하면 됩니다.
 
-(각 판정 카드는 `Organization`을 `@id`로 참조하는 구조라 11번 반복해서 바꿀 필요는 없습니다.) 한 번에 바꾸려면:
+**배포 URL이 확정되어 이미 반영 완료했습니다**: `https://healthkeeper2026-lab.github.io/healthfactcheck/`
 
-```bash
-sed -i '' 's#https://example.com/#https://실제도메인.com/#g' index.html robots.txt sitemap.xml   # macOS
-sed -i 's#https://example.com/#https://실제도메인.com/#g' index.html robots.txt sitemap.xml       # Linux
-```
+`index.html`(og:url·og:image·canonical·JSON-LD 4곳), `robots.txt`, `sitemap.xml`, `.github/workflows/indexnow.yml`(host·keyLocation·urlList) — 총 10곳 전부 위 URL로 교체 완료했고, JSON-LD·YAML·sitemap XML 파싱까지 재검증했습니다.
 
-`robots.txt`, `sitemap.xml`, `llms.txt`는 `index.html`과 같은 위치(도메인 루트)에 함께 올려야 크롤러가 표준 경로(`/robots.txt`, `/sitemap.xml`, `/llms.txt`)로 찾을 수 있습니다.
+> ⚠️ **GitHub Pages 서브프로젝트 구조상 주의할 점**: 이 저장소는 `healthkeeper2026-lab.github.io`라는 계정 루트 아래의 프로젝트 사이트(`/healthfactcheck/`)입니다. `robots.txt` 표준(RFC 9309)은 **도메인 진짜 루트**(`https://healthkeeper2026-lab.github.io/robots.txt`)에 있어야 공식적으로 인식되는데, 이 저장소 안의 `robots.txt`는 `.../healthfactcheck/robots.txt`에 위치해 엄밀히는 "공식 위치"가 아닙니다. 계정 루트에 별도 저장소(`healthkeeper2026-lab.github.io`)가 있다면 그쪽 robots.txt가 우선합니다 — 그쪽도 함께 확인/관리해주셔야 완전히 해결됩니다. (대부분의 크롤러는 그래도 서브패스 robots.txt를 존중하니, 없는 것보다는 낫습니다.)
+
+### IndexNow (신규 콘텐츠 즉시 제출)
+
+`c0c807c704954ca9b11a7856d2b1623a.txt`(IndexNow 인증키 파일)를 `index.html`과 같은 위치(도메인 루트)에 반드시 함께 배포해야 합니다.
+
+콘텐츠를 갱신한 뒤 GitHub 저장소의 **Actions 탭 → Submit to IndexNow → Run workflow**를 수동으로 눌러 실행하세요. `push` 시 자동 실행되지 않도록 일부러 `workflow_dispatch`(수동 트리거)만 사용했습니다 — 매 커밋마다 돌면서 실패 메일을 반복해서 보내는 걸 막기 위함입니다.
+
+`robots.txt`, `sitemap.xml`, `llms.txt`, IndexNow 키 파일(`*.txt`)은 모두 `index.html`과 같은 위치(도메인 루트)에 함께 올려야 표준 경로로 인식됩니다.
 
 ## 콘텐츠 추가하기
 

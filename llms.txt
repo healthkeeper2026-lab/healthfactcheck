@@ -11,12 +11,12 @@
 
 ## 카테고리 (6개)
 
-- 호흡기 건강 (RESP) — /index.html#chapter-resp
-- 심혈관 건강 (CARDIO) — /index.html#chapter-cardio
-- 간·대사 건강 (HEPA·META) — /index.html#chapter-hepatic
-- 근골격계 건강 (MSK) — /index.html#chapter-msk
-- 정신·수면 건강 (PSY·SLEEP) — /index.html#chapter-sleep
-- 영양·체중 건강 (NUTRI) — /index.html#chapter-nutrition
+- 호흡기 건강 (RESP) — https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-resp
+- 심혈관 건강 (CARDIO) — https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-cardio
+- 간·대사 건강 (HEPA·META) — https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-hepatic
+- 근골격계 건강 (MSK) — https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-msk
+- 정신·수면 건강 (PSY·SLEEP) — https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-sleep
+- 영양·체중 건강 (NUTRI) — https://healthkeeper2026-lab.github.io/healthfactcheck/#chapter-nutrition
 
 ## 검증된 주장 11건과 판정
 
@@ -37,7 +37,7 @@ index.html의 해당 카드 안 `<details class="card-detail">` 요소에 정적
 
 ## 자주 묻는 질문 (FAQ)
 
-44개의 자연어 질문과 답변이 /index.html#faq 섹션에 정적으로 포함되어 있으며,
+44개의 자연어 질문과 답변이 https://healthkeeper2026-lab.github.io/healthfactcheck/#faq 섹션에 정적으로 포함되어 있으며,
 각 답변은 위 11건 중 해당하는 판정 카드와 연결됩니다. FAQPage 구조화 데이터로도 제공됩니다.
 
 ## 판정 기준
