@@ -20,8 +20,8 @@
 
 ## 검증된 주장 11건과 판정
 
-1. [부분진실] 가열담배는 일반담배보다 발암물질 노출이 절반이다 — Journal of Hazardous Materials, 2025
-2. [진실] 가열담배는 실내 공기 오염이 일반담배보다 훨씬 적다 — Journal of Hazardous Materials, 2025
+1. [부분진실] 궐련형 전자담배는 일반담배보다 발암물질 노출이 절반이다 — Journal of Hazardous Materials, 2025
+2. [진실] 궐련형 전자담배는 실내 공기 오염이 일반담배보다 훨씬 적다 — Journal of Hazardous Materials, 2025
 3. [부분진실] 전자담배로 바꾸면 심혈관 위험이 낮아진다 — Circulation, 2021
 4. [진실] 스텐트 시술 후 완전 전환이 이중사용보다 낫다 — European Heart Journal, 2024
 5. [거짓] 전자담배는 금연으로 가는 좋은 '다리'가 된다 — Preventive Medicine, 2026
